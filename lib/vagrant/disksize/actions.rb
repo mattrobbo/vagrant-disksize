@@ -149,6 +149,7 @@ module Vagrant
           src_path = File.dirname(src)
           src_base = File.basename(src, src_extn)
           dst = File.join(src_path, src_base) + '.vdi'
+          dst.split! "./"
           disk.merge({ uuid: "(undefined)", file: dst })
         end
 
